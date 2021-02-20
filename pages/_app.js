@@ -10,8 +10,15 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Instalura - Projeto Base" />
+        <meta property="twitter:url" content="https://instalura.andrepassosb.vercel.app/" />
         <meta property="og:description" content="Bootcamp JamStack Alura" />
         <meta property="og:image" content="/images/meta_tag.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Instalura - Projeto Base" />
+        <meta property="twitter:url" content="https://instalura.andrepassosb.vercel.app/" />
+        <meta property="twitter:description" content="Bootcamp JamStack Alura" />
+        <meta property="twitter:image" content="/images/meta_tag.png" />
 
         <title>Instalura - Projeto Base</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
