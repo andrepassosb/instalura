@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
-import { propToStyle } from '../../../../theme/utils/propToStyle';
+import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../../theme/utils/propToStyle';
 
 const Container = styled.div`
     width: 100%;
@@ -30,7 +30,7 @@ const Container = styled.div`
   ${propToStyle('marginTop')}
 `;
 
-export const Grid = {
+const Grid = {
   Container,
   Row: styled.div`
     display: flex;
@@ -149,3 +149,4 @@ export const Grid = {
     ${propToStyle('paddingRight')}
   `,
 };
+export default Grid;

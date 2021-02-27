@@ -3,8 +3,8 @@ import Menu from '../src/components/commons/Menu';
 import Footer from '../src/components/commons/Footer';
 import Text from '../src/components/foundation/Text';
 import { Button } from '../src/components/commons/Button';
-import { Grid } from '../src/components/foundation/layout/Grid';
-import { Box } from '../src/components/foundation/layout/Box';
+import Grid from '../src/components/foundation/layout/Grid';
+import Box from '../src/components/foundation/layout/Box';
 import Modal from '../src/components/commons/Modal';
 import FormCadastro from '../src/components/patterns/FormCadastro';
 
@@ -93,7 +93,7 @@ export default function Home() {
               variant="primary.main"
               onClick={() => {
                 // isModalOpen = true;
-                console.log('isModalOpen', isModalOpen);
+                // console.log('isModalOpen', isModalOpen);
                 setModalState(!isModalOpen); // novo state sendo atribuido
               }}
             >

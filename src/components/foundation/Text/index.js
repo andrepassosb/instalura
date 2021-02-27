@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import get from 'lodash/get';
 import styled, { css } from 'styled-components';
-import { propToStyle } from '../../../theme/utils/propToStyle';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../theme/utils/propToStyle';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 export const TextStyleVariantsMap = {
   paragraph1: css`

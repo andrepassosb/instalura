@@ -3,8 +3,8 @@ import { Lottie } from '@crello/react-lottie';
 import errorAnimation from './animations/error.json';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
-import { Box } from '../../foundation/layout/Box';
-import { Grid } from '../../foundation/layout/Grid';
+import Box from '../../foundation/layout/Box';
+import Grid from '../../foundation/layout/Grid';
 import Text from '../../foundation/Text';
 
 const formStates = {
@@ -144,6 +144,8 @@ function FormContent() {
     </form>
   );
 }
+
+// teste
 
 // eslint-disable-next-line react/prop-types
 export default function FormCadastro({ propsDoModal }) {
