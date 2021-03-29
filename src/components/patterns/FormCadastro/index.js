@@ -1,6 +1,8 @@
 import React from 'react';
 import { Lottie } from '@crello/react-lottie';
 import errorAnimation from './animations/error.json';
+import successAnimation from './animations/success.json';
+import loadingAnimation from './animations/loading.json';
 import { Button } from '../../commons/Button';
 import TextField from '../../forms/TextField';
 import Box from '../../foundation/layout/Box';
@@ -45,31 +47,33 @@ function FormContent() {
           username: userInfo.usuario,
           name: userInfo.nome,
         };
-
-        fetch('https://instalura-api.vercel.app/api/users', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(userDTO),
-        })
-          .then((respostaDoServidor) => {
-            if (respostaDoServidor.ok) {
-              return respostaDoServidor.json();
-            }
-
-            throw new Error('Não foi possível cadastrar o usuário agora :(');
+        setSubmissionStatus(formStates.LOADING);
+        setTimeout(() => {
+          fetch('https://instalura-api.vercel.app/api/users', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userDTO),
           })
-          .then((respostaConvertidaEmObjeto) => {
-            setSubmissionStatus(formStates.DONE);
-            // eslint-disable-next-line no-console
-            console.log(respostaConvertidaEmObjeto);
-          })
-          .catch((error) => {
-            setSubmissionStatus(formStates.ERROR);
-            // eslint-disable-next-line no-console
-            console.error(error);
-          });
+            .then((respostaDoServidor) => {
+              if (respostaDoServidor.ok) {
+                return respostaDoServidor.json();
+              }
+
+              throw new Error('Não foi possível cadastrar o usuário agora :(');
+            })
+            .then((respostaConvertidaEmObjeto) => {
+              setSubmissionStatus(formStates.DONE);
+              // eslint-disable-next-line no-console
+              console.log(respostaConvertidaEmObjeto);
+            })
+            .catch((error) => {
+              setSubmissionStatus(formStates.ERROR);
+              // eslint-disable-next-line no-console
+              console.error(error);
+            });
+        }, 2000);
       }}
     >
 
@@ -117,12 +121,25 @@ function FormContent() {
         Cadastrar
       </Button>
 
+      {isFormSubmited && submissionStatus === formStates.LOADING && (
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
+          />
+        </Box>
+      )}
+
       {isFormSubmited && submissionStatus === formStates.DONE && (
         <Box>
           <Lottie
             width="150px"
             height="150px"
-            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
+            config={{ animationData: successAnimation, loop: false, autoplay: true }}
           />
           {/* https://lottiefiles.com/43920-success-alert-icon */}
         </Box>

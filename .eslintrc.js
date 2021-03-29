@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2020: true,
+    es2021: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -19,6 +19,6 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+    'import/prefer-default-export': 'off',
   },
 };

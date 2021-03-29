@@ -27,4 +27,5 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 `;
+
 export default GlobalStyle;
