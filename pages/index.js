@@ -63,7 +63,7 @@ function HomeScreen() {
               display="block"
               variant="primary.main"
               onClick={() => websitePageContext.toggleModalCadastro()}
-              
+
             >
               Cadastrar
             </Button>
