@@ -1,7 +1,8 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../../foundation/Text';
-import Box from '../../foundation/layout/Box';
+import { Box } from '../../foundation/layout/Box';
 import Grid from '../../foundation/layout/Grid';
 
 export default function FAQScreen({ faqCategories }) {
